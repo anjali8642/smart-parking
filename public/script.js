@@ -2,6 +2,8 @@ async function loadSlots() {
   try {
     const res = await fetch("/slots");
     const data = await res.json();
+    const PORT = process.env.PORT || 3000;
+
 
     const container = document.getElementById("slots");
     container.innerHTML = "";
@@ -43,6 +45,7 @@ async function resetSlots() {
   showToast("Reset Done 🔄");
   loadSlots();
 }
+
 
 // Cool popup
 function showToast(msg) {
